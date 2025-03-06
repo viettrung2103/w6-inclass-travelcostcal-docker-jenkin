@@ -1,4 +1,4 @@
-FROM ubuntu:latest
-LABEL authors="viett"
-
-ENTRYPOINT ["top", "-b"]
+FROM openjdk:21
+WORKDIR /app
+COPY target/*.jar app.jar
+ENTRYPOINT ["java", "-jar", "app.jar"]
